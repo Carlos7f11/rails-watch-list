@@ -1,4 +1,5 @@
 <h1>hello</h1>
+
 <ul>
   <% @lists.each do |list| %>
   <li><%= list.id %> - <%= list.name %> - <%= link_to "Show this list", list_path(list) %></li>
@@ -7,12 +8,7 @@
   <% else %>
     <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>
   <% end %>
-</ul>
-
-
-
-<ul>
-
+  <% end %>
 </ul>
 
 <%= link_to "Create a new list", new_list_path %>

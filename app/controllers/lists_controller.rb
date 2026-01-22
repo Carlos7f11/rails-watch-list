@@ -7,6 +7,8 @@ class ListsController < ApplicationController
     @list = List.new
   end
 
+  
+
   def create
 
     @list = List.create(list_params)
