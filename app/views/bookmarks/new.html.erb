@@ -1,5 +1,12 @@
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment, placeholder: "Comment here" %>
-  <%= f.association :movie %>
-  <%= f.submit %>
-<% end %>
+
+<div class="container py-5">
+  <div class="col-12">
+    <div class="bg-white rounded p-3 shadow">
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.input :comment, placeholder: "Comment here" %>
+        <%= f.association :movie %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

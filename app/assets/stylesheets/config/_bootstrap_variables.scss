@@ -29,6 +29,14 @@ $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
 
+$magic: $purple;
+
+$theme-colors: map-merge(
+  $theme-colors, (
+    "magic": $magic
+  )
+);
+
 // Buttons & inputs' radius
 $border-radius-sm:            .0625rem;
 $border-radius:               .125rem;

@@ -1,0 +1,19 @@
+<div class="modal fade" id="new_movie_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="new_movie_modalLabel">Add a movie</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.input :comment, placeholder: "Comment here" %>
+        <%= f.association :movie %>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "Add movie", class: "btn btn-flat" %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

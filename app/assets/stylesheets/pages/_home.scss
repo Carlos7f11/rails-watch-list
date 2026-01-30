@@ -1,1 +1,31 @@
 // Specific CSS for your home-page
+.home {
+  background: $background-color
+
+
+  h1 {
+    color: $blue;
+  }
+
+  h3 {
+    color: green;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

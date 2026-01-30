@@ -1,14 +1,30 @@
-<h1>hello</h1>
 
-<ul>
-  <% @lists.each do |list| %>
-  <li><%= list.id %> - <%= list.name %> - <%= link_to "Show this list", list_path(list) %></li>
-  <% if list.photo.attached? %>
-    <%= cl_image_tag list.photo.key %>
-  <% else %>
-    <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>
-  <% end %>
-  <% end %>
-</ul>
 
-<%= link_to "Create a new list", new_list_path %>
+<div class="cover mb-4 d-flex align-items-center justify-content-center mt-4">
+  <div class="text-center">
+    <h1>Save any kind of movies</h1>
+    <h3 class="typed-js" data-controller="typed-js"></h3>
+  </div>
+
+</div>
+
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">My list</h3>
+    <%= link_to "Create a new list", new_list_path, class: "btn btn-flat" %>
+  </div>
+
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="co-12 col-sm-6 col-md-4">
+
+      <%= link_to list_path(list), class: "text-decoration-none" do %>
+        <div class="card-category" data-aos="zoom-in" style="background-image:url(<%= asset_url('avatar.jpg') %>)" >
+          <%= list.name %> - <%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+        </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+
+</div>
